@@ -9,7 +9,7 @@ This repository accompanies the study on thinking LLMs’ reasoning quality in c
 - **models/**
   - The scripts for running reasoning models.
 - **eval/**
-  - Evaluation scripts for reasoning quality (efficiency, logical correctness, completeness), stability analysis, and correctness correlations.
+  - Evaluation scripts for reasoning quality, stability analysis, and correctness correlations.
 - **examples/**
   - Curated example tasks and reasoning traces for quick inspection.
 - **model_outputs/**
@@ -27,21 +27,7 @@ This repository accompanies the study on thinking LLMs’ reasoning quality in c
 
 - Place BigCodeBench subsets and task files under `data/` (we include the exact splits we used where licensing permits). If some files are not included, follow their original dataset instructions to obtain them and mirror the expected structure under `data/`.
 
-3) Evaluate
+3) Evaluation
 
-- The `eval/` folder contains scripts to:
-  - parse and score reasoning traces along the three dimensions,
-  - compute correlations between reasoning quality and task correctness,
-  - perform stability analysis across effort levels,
-  - summarize per-model and per-difficulty results.
-
-Example usage pattern (pseudo-CLI; adapt to script names/flags in `eval/`):
-
-```
-python eval/evaluate.py \
-  --tasks data/<tasks_file>.jsonl \
-  --inputs model_outputs/<model_name>/ \
-  --metrics efficiency logical_correctness completeness \
-  --out results/<model_name>.json
-```
-
+- The `eval/` folder contains the evaluation and analysis code used in the paper.
+- Prepare the required inputs and run the relevant scripts from `eval/` as needed.
